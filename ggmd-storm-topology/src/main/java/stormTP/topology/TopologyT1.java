@@ -21,7 +21,7 @@ public class TopologyT1 {
 		int portOUTPUT = Integer.parseInt(args[1]);
     	
 		/*Création du spout*/
-    	InputStreamSpout spout = new InputStreamSpout("127.0.0.1", portINPUT);
+    	InputStreamSpout spout = new InputStreamSpout("storm-client", portINPUT);
     	/*Création de la topologie*/
     	TopologyBuilder builder = new TopologyBuilder();
         /*Affectation à la topologie du spout*/
@@ -34,7 +34,7 @@ public class TopologyT1 {
         /*Création d'une configuration*/
         Config config = new Config();
         /*La topologie est soumise à STORM*/
-        StormSubmitter.submitTopology("topoT1", config, builder.createTopology());
+        StormSubmitter.submitTopology("topoTP1", config, builder.createTopology());
 	}
 		
 	
